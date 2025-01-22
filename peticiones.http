@@ -1,0 +1,33 @@
+GET http://localhost:3000/api/auth/usernames HTTP/1.1
+###
+
+POST http://localhost:3000/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "usuario1",
+    "password": "pass1"
+}
+###
+
+POST http://localhost:3000/api/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "usuario3",
+    "password": "pass3"
+}
+###
+
+POST http://localhost:3000/api/challenge/results HTTP/1.1
+content-type: application/json
+
+{    
+    "usuario": "usuario1",
+    "n_aciertos": 7,
+    "n_fallidos": 3,
+    "totalPuntos": 62
+}
+###
+
+GET http://localhost:3000/api/challenge/results HTTP/1.1

@@ -1,0 +1,12 @@
+[
+    { "Código": 10, "Nombre": "Efectivo" },
+    { "Código": 42, "Nombre": "Consignación" },
+    { "Código": 20, "Nombre": "Cheque" },
+    { "Código": 47, "Nombre": "Transferencia" },
+    { "Código": 71, "Nombre": "Bonos" },
+    { "Código": 72, "Nombre": "Vales" },
+    { "Código": 1, "Nombre": "Medio de pago no definido" },
+    { "Código": 49, "Nombre": "Tarjeta Débito" },
+    { "Código": 48, "Nombre": "Tarjeta Crédito" },
+    { "Código": "ZZZ", "Nombre": "Otro" }
+]

@@ -1,0 +1,8 @@
+[
+	{"id":1,"name":"Devolución parcial de los bienes y/o no aceptación parcial del servicio."},
+	{"id":2,"name":"Anulación de factura electrónica."},
+	{"id":3,"name":"Rebaja o descuento parcial o total."},
+	{"id":4,"name":"Ajuste de precio."},
+	{"id":5,"name":"Descuento comercial por pronto pago."},
+	{"id":6,"name":"Descuento comercial por volumen de ventas."}
+]

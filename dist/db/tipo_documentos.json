@@ -1,0 +1,13 @@
+[
+    { "ID": 1, "Nombre": "Registro civil" },
+    { "ID": 2, "Nombre": "Tarjeta de identidad" },
+    { "ID": 3, "Nombre": "Cédula de ciudadanía" },
+    { "ID": 4, "Nombre": "Tarjeta de extranjería" },
+    { "ID": 5, "Nombre": "Cédula de extranjería" },
+    { "ID": 6, "Nombre": "NIT" },
+    { "ID": 7, "Nombre": "Pasaporte" },
+    { "ID": 8, "Nombre": "Documento de identificación extranjero" },
+    { "ID": 9, "Nombre": "PEP" },
+    { "ID": 10, "Nombre": "NIT otro país" },
+    { "ID": 11, "Nombre": "NUIP" }
+]

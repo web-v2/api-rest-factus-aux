@@ -11,8 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.obtenerMetodosPago = void 0;
 const metodos_pago_model_1 = require("../models/metodos_pago.model");
+const fechas_utils_1 = require("../utils/fechas.utils");
 const obtenerMetodosPago = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log((0, fechas_utils_1.getFecha)(), '->Listar metodos-pago');
         const metodos = yield (0, metodos_pago_model_1.getMetodos)();
         res.status(200).json(metodos);
     }

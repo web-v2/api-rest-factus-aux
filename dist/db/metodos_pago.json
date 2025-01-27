@@ -1,12 +1,12 @@
 [
-    { "Código": 10, "Nombre": "Efectivo" },
-    { "Código": 42, "Nombre": "Consignación" },
-    { "Código": 20, "Nombre": "Cheque" },
-    { "Código": 47, "Nombre": "Transferencia" },
-    { "Código": 71, "Nombre": "Bonos" },
-    { "Código": 72, "Nombre": "Vales" },
-    { "Código": 1, "Nombre": "Medio de pago no definido" },
-    { "Código": 49, "Nombre": "Tarjeta Débito" },
-    { "Código": 48, "Nombre": "Tarjeta Crédito" },
-    { "Código": "ZZZ", "Nombre": "Otro" }
+    { "codigo": 10, "nombre": "Efectivo" },
+    { "codigo": 42, "nombre": "Consignación" },
+    { "codigo": 20, "nombre": "Cheque" },
+    { "codigo": 47, "nombre": "Transferencia" },
+    { "codigo": 71, "nombre": "Bonos" },
+    { "codigo": 72, "nombre": "Vales" },
+    { "codigo": 1, "nombre": "Medio de pago no definido" },
+    { "codigo": 49, "nombre": "Tarjeta Débito" },
+    { "codigo": 48, "nombre": "Tarjeta Crédito" },
+    { "codigo": "ZZZ", "nombre": "Otro" }
 ]

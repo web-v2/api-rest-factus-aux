@@ -52,7 +52,7 @@ const addCliente = (cliente) => __awaiter(void 0, void 0, void 0, function* () {
 exports.addCliente = addCliente;
 const findClienteById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const clientes = yield (0, exports.getClientes)();
-    return clientes.find((cl) => cl.identification === id);
+    return clientes.find((cl) => cl.identification === id + '');
 });
 exports.findClienteById = findClienteById;
 const findClienteByName = (name) => __awaiter(void 0, void 0, void 0, function* () {

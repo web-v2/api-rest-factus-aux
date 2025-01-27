@@ -40,9 +40,9 @@ export const addCliente = async (cliente: Cliente): Promise<Cliente> => {
   return cliente;
 };
 
-export const findClienteById = async (id: number): Promise<Cliente | undefined> => {
+export const findClienteById = async (id: string): Promise<Cliente | undefined> => {
   const clientes = await getClientes();
-  return clientes.find((cl) => cl.identification === id);   
+  return clientes.find((cl) => cl.identification === id+'');   
 };
 
 export const findClienteByName = async (name: string): Promise<Cliente | undefined> => {

@@ -9,11 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFecha = exports.productoUpdate = exports.productoByName = exports.productoById = exports.listProductos = exports.crearProducto = void 0;
+exports.productoUpdate = exports.productoByName = exports.productoById = exports.listProductos = exports.crearProducto = void 0;
 const producto_service_1 = require("../services/producto.service");
+const fechas_utils_1 = require("../utils/fechas.utils");
 const crearProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log((0, exports.getFecha)(), '->Crear producto');
+        console.log((0, fechas_utils_1.getFecha)(), '->Crear producto');
         const producto = yield (0, producto_service_1.saveProducto)(req.body);
         res.status(201).json(producto);
     }
@@ -29,7 +30,7 @@ const crearProducto = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 exports.crearProducto = crearProducto;
 const listProductos = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log((0, exports.getFecha)(), '->Listar productos');
+        console.log((0, fechas_utils_1.getFecha)(), '->Listar productos');
         const productos = yield (0, producto_service_1.getAllProductos)();
         res.status(200).json(productos);
     }
@@ -40,9 +41,12 @@ const listProductos = (_req, res) => __awaiter(void 0, void 0, void 0, function*
 exports.listProductos = listProductos;
 const productoById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log((0, exports.getFecha)(), '->Find producto by Id');
+        console.log((0, fechas_utils_1.getFecha)(), '->Find producto by Id');
         const id = req.params.id;
-        res.status(400).json({ status: 400, message: "El ID proporcionado no es válido." });
+        if (!id) {
+            res.status(400).json({ status: 400, message: "El ID proporcionado no es válido." });
+            return;
+        }
         const producto = yield (0, producto_service_1.fetchProductoById)(id);
         if (!producto) {
             res.status(404).json({ status: 404, message: "Producto no encontrado con este ID." });
@@ -57,7 +61,7 @@ const productoById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
 exports.productoById = productoById;
 const productoByName = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log((0, exports.getFecha)(), '->Find producto by Name');
+        console.log((0, fechas_utils_1.getFecha)(), '->Find producto by Name');
         const { name } = req.params;
         const producto = yield (0, producto_service_1.fetchProductoByName)(name);
         if (!producto) {
@@ -72,7 +76,7 @@ const productoByName = (req, res) => __awaiter(void 0, void 0, void 0, function*
 });
 exports.productoByName = productoByName;
 const productoUpdate = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log((0, exports.getFecha)(), '->Actualizar producto');
+    console.log((0, fechas_utils_1.getFecha)(), '->Actualizar producto');
     try {
         const { code_reference } = req.body;
         if (!code_reference) {
@@ -96,18 +100,3 @@ const productoUpdate = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.productoUpdate = productoUpdate;
-const getFecha = () => {
-    const fecha = new Date();
-    const offset = -5 * 60; // UTC-5 en minutos
-    const utcFecha = new Date(fecha.getTime() + offset * 60000);
-    const year = utcFecha.getUTCFullYear();
-    const month = (utcFecha.getUTCMonth() + 1).toString().padStart(2, '0');
-    const day = utcFecha.getUTCDate().toString().padStart(2, '0');
-    const hours = utcFecha.getUTCHours().toString().padStart(2, '0');
-    const minutes = utcFecha.getUTCMinutes().toString().padStart(2, '0');
-    const seconds = utcFecha.getUTCSeconds().toString().padStart(2, '0');
-    // Mostrar la fecha formateada en UTC-5
-    const fechaFormateada = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    return fechaFormateada;
-};
-exports.getFecha = getFecha;

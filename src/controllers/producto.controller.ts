@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getAllProductos, saveProducto, fetchProductoByName, fetchProductoById, updateProducto } from '../services/producto.service';
+import { getFecha } from '../utils/fechas.utils'
 
 export const crearProducto = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -28,8 +29,11 @@ export const listProductos = async (_req: Request, res: Response): Promise<void>
 export const productoById = async (req: Request, res: Response): Promise<void> => {
   try {
     console.log(getFecha(),'->Find producto by Id');
-    const id = req.params.id;       
-    res.status(400).json({ status: 400, message: "El ID proporcionado no es válido." });          
+    const id = req.params.id;
+    if (!id){
+      res.status(400).json({ status: 400, message: "El ID proporcionado no es válido." });          
+      return;
+    }       
     const producto = await fetchProductoById(id);
     if (!producto) {      
       res.status(404).json({ status: 404, message: "Producto no encontrado con este ID." });
@@ -80,20 +84,4 @@ export const productoUpdate = async (req: Request, res: Response): Promise<void>
       error: error instanceof Error ? error.message : "Error desconocido",
     });
   }
-};
-
-export const getFecha = ():string => {
-  const fecha = new Date();
-  const offset = -5 * 60; // UTC-5 en minutos
-  const utcFecha = new Date(fecha.getTime() + offset * 60000);
-  const year = utcFecha.getUTCFullYear();
-  const month = (utcFecha.getUTCMonth() + 1).toString().padStart(2, '0');
-  const day = utcFecha.getUTCDate().toString().padStart(2, '0');
-  const hours = utcFecha.getUTCHours().toString().padStart(2, '0');
-  const minutes = utcFecha.getUTCMinutes().toString().padStart(2, '0');
-  const seconds = utcFecha.getUTCSeconds().toString().padStart(2, '0');
-
-  // Mostrar la fecha formateada en UTC-5
-  const fechaFormateada = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-  return fechaFormateada;
 };

@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import clienteRoutes from "./routes/cliente.routes";
 import productoRoutes from "./routes/producto.routes";
+import metodosPagoRoutes from "./routes/metodos_pago.routes";
 import { initializeConfigFile } from "./utils/file.utils";
 import cors from "cors";
 
@@ -42,6 +43,7 @@ app.get("/api", (req, res) => {
 app.use(bodyParser.json());
 app.use("/api/clientes", clienteRoutes);
 app.use("/api/productos", productoRoutes);
+app.use("/api/metodos-pago", metodosPagoRoutes);
 
 initializeConfigFile()
   .then(() => {

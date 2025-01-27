@@ -13,7 +13,7 @@ export const fetchClienteByName = async (name: string): Promise<Cliente | undefi
   return await findClienteByName(name);
 };
 
-export const fetchClienteById = async (id: number): Promise<Cliente | undefined> => {
+export const fetchClienteById = async (id: string): Promise<Cliente | undefined> => {
   return await findClienteById(id);
 };
 

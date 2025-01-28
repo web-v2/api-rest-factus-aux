@@ -15,7 +15,7 @@ Run `npm start` for a dev server. Navigate to `http://localhost:3000/api/`. The 
 
 Run `npx tsc` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-URL: [https://api-rest-tekball-production.up.railway.app/api](https://api-rest-tekball-production.up.railway.app/api)
+
 
 ## API Reference
 

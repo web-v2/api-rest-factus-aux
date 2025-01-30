@@ -11,8 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.obtenerTiposDocumentos = void 0;
 const tipos_documentos_model_1 = require("../models/tipos_documentos.model");
+const fechas_utils_1 = require("../utils/fechas.utils");
 const obtenerTiposDocumentos = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        console.log((0, fechas_utils_1.getFecha)(), '->Listar tipos de documentos');
         const tiposDocumentos = yield (0, tipos_documentos_model_1.getTiposDocumentos)();
         res.status(200).json(tiposDocumentos);
     }

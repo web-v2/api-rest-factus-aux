@@ -1,7 +1,7 @@
 <a href="https://node.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="200" height="200" alt="Angular" /></a>
 <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="200" height="200" alt="TypeScript" /></a>
 
-# Factus Backend - Node,Express, Typescript - SamirV2
+# Factus Backend AUX - Node,Express, Typescript - SamirV2
 
 <h2 align="center">
 :construction: Proyecto en construcción :construction:
@@ -37,6 +37,20 @@ URL: [https://api-rest-tekball-production.up.railway.app/api](https://api-rest-t
 | `/api/productos/`     | `PUT`  | Actualiza productos |
 | `/api/productos/:id`  | `GET`  | producto by id      |
 
+#### Metodos de Pago
+
+| Parameter            | Type  | Description       |
+| :------------------- | :---- | :---------------- |
+| `/api/metodos-pago/` | `GET` | Lista los metodos |
+
+#### Bills - Response Factus
+
+| Parameter        | Type   | Description        |
+| :--------------- | :----- | :----------------- |
+| `/api/bills/`    | `GET`  | Lista las facturas |
+| `/api/bills/`    | `POST` | Crea nueva factura |
+| `/api/bills/:id` | `GET`  | Factura by id      |
+
 ## Technologies
 
 ---
@@ -49,7 +63,7 @@ A list of technologies used within the project:
 
 ## Skills 🛠
 
-bcrypt,body-paser,cors,express,fs-extra,serverless-http,uuid
+body-paser,cors,express,fs-extra,uuid
 
 ## Autores ✒️
 
@@ -65,7 +79,7 @@ Samir Vergara V - Elaboración propia
 
 **Descarga o accede al código fuente del proyecto mediante el siguiente enlace:**
 
-URL:[https://github.com/web-v2/api-rest-tekball](https://github.com/web-v2/api-rest-tekball)
+URL:[https://github.com/web-v2/api-rest-factus-aux](https://github.com/web-v2/api-rest-factus-aux)
 
 ## Licencia 📄
 

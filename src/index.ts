@@ -1,10 +1,14 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
+//Rutas
 import clienteRoutes from "./routes/cliente.routes";
 import productoRoutes from "./routes/producto.routes";
 import metodosPagoRoutes from "./routes/metodos_pago.routes";
+import billRoutes from "./routes/bill.routes";
+import tipoDocRoutes from "./routes/tipos_documentos.routes";
+//Configuracion de Archivos json
 import { initializeConfigFile } from "./utils/file.utils";
-import cors from "cors";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,9 +32,9 @@ const corsOptions: cors.CorsOptions = {
       callback(new Error("No autorizado por CORS"));
     }
   },
-  methods: ['GET', 'POST', 'PUT'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true 
+  methods: ["GET", "POST", "PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 
 // Usa el middleware CORS
@@ -44,12 +48,14 @@ app.use(bodyParser.json());
 app.use("/api/clientes", clienteRoutes);
 app.use("/api/productos", productoRoutes);
 app.use("/api/metodos-pago", metodosPagoRoutes);
+app.use("/api/tipo-documentos", tipoDocRoutes);
+app.use("/api/bills", billRoutes);
 
 initializeConfigFile()
   .then(() => {
     app.listen(port, () => {
-      const mensaje = 'API FACTUS AUX';
-      const borde = '*'.repeat(mensaje.length + 4);
+      const mensaje = "API FACTUS AUX";
+      const borde = "*".repeat(mensaje.length + 4);
       console.log(borde);
       console.log(`* ${mensaje} *`);
       console.log(borde);

@@ -17,7 +17,12 @@ const obtenerTiposDocumentos = (req, res) => __awaiter(void 0, void 0, void 0, f
         res.status(200).json(tiposDocumentos);
     }
     catch (error) {
-        res.status(500).json({ status: 500, message: "Error al obtener los tipos de documentos." });
+        res
+            .status(500)
+            .json({
+            status: 500,
+            message: "Error al obtener los tipos de documentos.",
+        });
     }
 });
 exports.obtenerTiposDocumentos = obtenerTiposDocumentos;
